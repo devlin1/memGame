@@ -1,0 +1,74 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+*{
+font-family:"Lato";
+}
+body{
+    background-color: white;
+}
+#container{
+    display: table;
+    background-color: #666362;
+    width:80%;
+    text-align: center;
+    margin:auto;
+}
+
+#header{
+    background: #33B5E5;
+    display: block;
+    margin: auto;
+}
+
+#footer{
+    background: #33B5E5;
+    display: block;
+    margin: auto;
+    height: 80px;
+}
+
+#heading{
+    font-size: 3em;
+    display: inline-block;
+    width: 80%;
+    height: 80px;
+    margin: auto;
+}
+
+#board{
+    display: table;
+    width: 80%;
+    height: inherit;
+    margin: auto;
+}
+#counter{
+    width: 100px;
+    height: 100px;
+}
+.block{
+    font-size:4em;
+    margin: 8px;
+    display: inline-table;
+    width: 200px; 
+    height: 200px;
+    background-color: #cccccc;
+    text-align: center;
+    vertical-align: middle;
+    border: 8px solid #CCFF99;
+}
+.inGame{
+    border:8px solid #FFFFFF;
+}
+.selected{
+    border:8px solid #33B5E5;
+}
+
+.block.imgBg{
+   content: url(bg.jpg);
+}
+.imgShow{
+/*    -webkit-transform:rotate(180deg);
+    -moz-transform:rotate(180deg); 
+    -o-transform:rotate(180deg);
+    content: url(http://akamaicovers.oreilly.com/images/9780596517748/cat.gif);*/*/
+    max-width: 100%;
+}
