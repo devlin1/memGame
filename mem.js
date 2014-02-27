@@ -2,7 +2,7 @@ $(document).ready(function(){
 // initiating blocks with initBlocks(12);
     initBlocks(12);
     setPairs();
-    setImgsource("barbapapa");
+    setImgsource("animals");
     $(".inGame.block").on( "click", updateSelected);
 });
 
@@ -19,7 +19,7 @@ function shuffleArray(array) {
 
 //function for creating pairs 
 function setPairs(){
-    var aPairs=["A", "B", "B","A","C","C","1","1","4","4","J","J"];
+    var aPairs=["A", "A", "B","B","C","C","D","D","E","E","F","F"];
     var rPairs = shuffleArray(aPairs);
     var blocks = document.getElementsByClassName("block");
     //add img of pairs
@@ -36,23 +36,23 @@ function setImgsource(game){
 	    'A': "animal1",
 	    'B': "animal2",
 	    'C': "animal3",
-	    '1': "animal4",
-	    '4': "animal5",
-	    'J': "animal6"
+	    'D': "animal4",
+	    'E': "animal5",
+	    'F': "animal6"
 	};
 	var blocks = document.getElementsByClassName("block");
 	for(i=0;i<blocks.length;i++){
 	    blocks[i].imgSrc = imgSrc[blocks[i].pair];
 	}
     }
-    if(game=="barbapapa"){
+    if(game=="summer"){
 	imgSrc = {
-	    'A': "barbadrake",
-	    'B': "barbafagel",
-	    'C': "barbamamma",
-	    '1': "barbapapa",
-	    '4': "barbaskon",
-	    'J': "barbastark"
+	    'A': "summer1",
+	    'B': "summer2",
+	    'C': "summer3",
+	    'D': "summer4",
+	    'E': "summer5",
+	    'F': "summer6"
 	};
 	var blocks = document.getElementsByClassName("block");
 	for(i=0;i<blocks.length;i++){
@@ -66,7 +66,7 @@ function setImgsource(game){
 // function for changing picture when clicked to imgSrc of the block 
 function swapImgsource(blockId){
     block = document.getElementById(blockId);
-    urlStr = "url(" + block.imgSrc +".jpg)";
+    urlStr = "url(" + block.imgSrc +".png)";
     //changing to log to console 
       //alert(block +" " +urlStr);
     console.log("swapImgsource for block: "+block +" " +urlStr);
@@ -101,8 +101,6 @@ if(blockElementA.pair == blockElementB.pair){
 	    restoreImgsource(blockA);
 	    restoreImgsource(blockB);
 		   },2000);
-//	restoreImgsource(blockA);
-//	restoreImgsource(blockB);
 	return(false);
     }
 }
@@ -114,11 +112,9 @@ function updateSelected()
     if($(this).hasClass("inGame")){
 	console.log("UpdateSelected() is inGame: doing swap of img for "+blockId);
 	$(this).toggleClass("selected imgBg");
-	swapImgsource(blockId);
-    } 
+	swapImgsource(blockId); 
+    }
     var countOfSelected = document.getElementsByClassName("inGame selected");
-//    $(#counter).HTML = countOfSelected;
-    //log countOfSelected element. 
     console.log("UpdateSelected() length of countOfSelected: " +countOfSelected.length);
     if (countOfSelected.length > 2)
     {
@@ -143,15 +139,6 @@ function updateSelected()
 	}	    
     };
 };
-
-//new update selected with counter for Selected blocks
-/*function updateSelectedNew(){
-		$(this).toggleClass("selected");
-		setTimeout(removeClass, 2000);
-		function removeClass(){
-			$(".block").removeClass("selected");
-		}
-};*/
 
 function initBlocks(numOfBlocks){
     var board = document.getElementById("board");
